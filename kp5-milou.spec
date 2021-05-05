@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.4
+%define		kdeplasmaver	5.21.5
 %define		qtver		5.9.0
 %define		kpname		milou
 Summary:	A dedicated search application built on top of Baloo
 Name:		kp5-%{kpname}
-Version:	5.21.4
+Version:	5.21.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5bbe8c3048c32e7819310772cc956138
+# Source0-md5:	4c617dbb473686e091b2cee9e5f3bc3a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
