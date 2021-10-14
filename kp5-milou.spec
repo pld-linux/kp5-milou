@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.22.5
+%define		kdeplasmaver	5.23.0
 %define		qtver		5.9.0
 %define		kpname		milou
 Summary:	A dedicated search application built on top of Baloo
 Name:		kp5-%{kpname}
-Version:	5.22.5
+Version:	5.23.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	99424cf021c842ce90ec99d3ad841cc4
+# Source0-md5:	ff19b39883bfbc99d7691fe3c64de698
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -56,9 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %ghost %{_libdir}/libmilou.so.5
 %attr(755,root,root) %{_libdir}/libmilou.so.*.*.*
-%attr(755,root,root) %{_libdir}/qt5/plugins/miloutextplugin.so
 %{_libdir}/qt5/qml/org/kde/milou
-%{_datadir}/kservices5/miloutextpreview.desktop
-%{_datadir}/kservicetypes5/miloupreviewplugin.desktop
 %{_datadir}/plasma/plasmoids/org.kde.milou
 %{_datadir}/metainfo/org.kde.milou.appdata.xml
