@@ -1,28 +1,27 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.10
+%define		kdeplasmaver	5.93.0
 %define		qtver		5.15.2
 %define		kpname		milou
 Summary:	A dedicated search application built on top of Baloo
 Name:		kp5-%{kpname}
-Version:	5.27.10
-Release:	1
+Version:	5.93.0
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8a51e19d58acebb89a919b7377d8bc83
+Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	88e490483cb1de666d8b449e24c6ca59
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf5-kdeclarative-devel
-BuildRequires:	kf5-ki18n-devel
-BuildRequires:	kf5-krunner-devel
-BuildRequires:	kf5-kservice-devel
-BuildRequires:	kf5-plasma-framework-devel
+BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf6-kdeclarative-devel
+BuildRequires:	kf6-ki18n-devel
+BuildRequires:	kf6-krunner-devel
+BuildRequires:	kf6-kservice-devel
 BuildRequires:	ninja
-BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -60,9 +59,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libmilou.so.5
-%attr(755,root,root) %{_libdir}/libmilou.so.*.*.*
-%{_libdir}/qt5/qml/org/kde/milou
+%{_libdir}/qt6/qml/org/kde/milou
 %{_datadir}/plasma/plasmoids/org.kde.milou
 %{_datadir}/metainfo/org.kde.milou.appdata.xml
-%{_datadir}/kservices5/plasma-applet-org.kde.milou.desktop
